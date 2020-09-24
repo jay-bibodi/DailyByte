@@ -40,21 +40,19 @@ public class ReverseVowels {
 		int i = 0, j = sbObj.length()-1;
 		
 		while(i<j) {
-			while(!vowels.contains(Character.toLowerCase(sbObj.charAt(i)))) {
+			while(i<j && !vowels.contains(Character.toLowerCase(sbObj.charAt(i)))) {
 				i++;
 			}
 			
-			while(!vowels.contains(Character.toLowerCase(sbObj.charAt(j)))) {
+			while(i<j && !vowels.contains(Character.toLowerCase(sbObj.charAt(j)))) {
 				j--;
 			}
 			
-			if(i<j) {
-				char c = sbObj.charAt(i);
-				sbObj.setCharAt(i, sbObj.charAt(j));
-				sbObj.setCharAt(j, c);
-				i++;
-				j--;
-			}
+            char c = sbObj.charAt(i);
+            sbObj.setCharAt(i, sbObj.charAt(j));
+            sbObj.setCharAt(j, c);
+            i++;
+            j--;
 		}
 		
 		return sbObj.toString();
